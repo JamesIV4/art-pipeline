@@ -1,0 +1,13 @@
+{
+  "paths": {
+    "godot_project": "xcom-3d-godot/x-com--ufo-defense-3d",
+    "catalog": "art/asset_catalog.json",
+    "published_catalog": "xcom-3d-godot/x-com--ufo-defense-3d/assets/catalog.json",
+    "models_out": "xcom-3d-godot/x-com--ufo-defense-3d/assets/models",
+    "native_header_dir": null,
+    "toon_material": null
+  },
+  "settings": {
+    "godot_exe": "C:\\GameDev\\Godot_v4.7-stable_win64\\Godot_v4.7-stable_win64_console.exe"
+  }
+}

@@ -1,4 +1,4 @@
-# tools/review: review, QA, validation, gating and catalog tools (from XCOM)
+﻿# tools/review: review, QA, validation, gating and catalog tools (from XCOM)
 
 Imported 2026-10-25 from `S:/Repos/OpenXcom-Extended-3D` ("XCOM"). Every file starts with an
 `Origin:` / `Changed:` comment. `ROOT = Path(__file__).parents[2]` was replaced with
@@ -15,7 +15,7 @@ No XCOM `gates.py` was ported. `root_independent_checks.py` is XCOM's gate. XCOM
 
 | File | Purpose | Origin (XCOM-relative) | Dependencies | Remaining game-specific assumptions |
 |---|---|---|---|---|
-| `asset-review/asset_review.py` (+ `app.js`, `index.html`, `style.css`, `asset_review.bat`, `vendor/three_entry.js`, `vendor/three.bundle.js`) | Local web reviewer: every published asset in a live three.js view; per-asset revision notes in `art/asset_revisions/revisions.json`; zip export for outside contributors | `art/tools/asset-review/` | stdlib + browser; vendored three.js r186 ESM bundle (MIT, built from `three_entry.js`) | reads `<godot_project>/assets/catalog.json` and `assets/shared_natural_terrain/manifest.json` (required); sprites from `<game>/art/reference/{units,items}`; XCOM night-shade lighting, tile sizes, `PLAYER_UNITS`, port of `natural_terrain.gd` in `app.js` |
+| `asset-review/asset_review.py` (+ `app.js`, `index.html`, `style.css`, `asset_review.bat`, `vendor/three_entry.js`) | Local web reviewer: every published asset in a live three.js view; per-asset revision notes in `art/asset_revisions/revisions.json`; zip export for outside contributors | `art/tools/asset-review/` | stdlib + browser; three.js r186 ESM bundle (MIT) built from `vendor/three_entry.js`; not committed, see `vendor/README.md` | reads `<godot_project>/assets/catalog.json` and `assets/shared_natural_terrain/manifest.json` (required); sprites from `<game>/art/reference/{units,items}`; XCOM night-shade lighting, tile sizes, `PLAYER_UNITS`, port of `natural_terrain.gd` in `app.js` |
 | `review_contact_sheet.py` | Source sprite next to the four Godot review captures (`art/review/godot/<id>[/<tag>]`), written to `art/review/verified_sheets/<name>.png` | `art/tools/review_contact_sheet.py` | PIL (+ catalog_reference.save_png) | `art/review/...` layout; consola.ttf |
 | `blender_review_sheet.py` | Source next to four Blender views per id | `art/tools/blender_review_sheet.py` | PIL | `reference_image` / `review_views` fields; consola.ttf |
 | `material_trial_review_sheet.py` | One model + its sprite per `trial_manifest.json` | `art/tools/material_trial_review_sheet.py` | PIL | trial manifest schema; consola.ttf |
@@ -43,3 +43,10 @@ the in-game `OXP_RENDER_STEPS` panel), `test_client_lock.py` (the same lock patt
 (one-off sheets with fixed ids/paths), `modular_fit.py` (XCOM tile volume rules), `build_models.py` /
 `model_*.py` / `reviewed_*.py` (XCOM catalog builds), the `capture_*` / `*showcase*` / `*web_archive*` /
 `model_studio` scripts, and all `.gd` / `.ps1` engine-side scripts (owned by the engine port).
+
+## From trick-or-treat
+
+| File | Purpose | Origin | Dependencies | Remaining game-specific assumptions |
+|---|---|---|---|---|
+| `distance_check.py` | Shrinks a 2x2 engine preview sheet so the subject is ~N px tall (gameplay distance), nearest-neighbour enlarged, optional concept crop alongside | `S:/Repos/trick-or-treat/art/team/characters_candy/batch03/distance_check.py` | PIL | none (concept image is `--concept-image`; default `--px 70` is trick-or-treat's hero at 15 m) |
+

@@ -46,8 +46,9 @@ per-asset textures. The same layer indices are shared by Blender assets and C++ 
   ghosts layouts that do not (3x3 paver grid, 3.3 ribs per tile). Fix: offset the source so its
   edges land in continuous content (`np.roll` by half a paver or rib) and record it as
   `postprocess` in the provenance.
-- Low-contrast sources (wood, concrete, metal) were once boosted 4-8x and turned streaky (wood
-  knots became dark "eyes", faint metal became purple blotches). The gain is now capped at 2.5.
+- Low-contrast sources (wood, concrete, metal) were boosted 4-8x during the 2026-10-24 pass and
+  turned streaky (wood knots became dark "eyes", faint metal became purple blotches). The current
+  script caps the gain at 2.5.
 - Material reads that failed in engine and were changed per asset: fabric (plaid) on ghost and
   mummy; paper on a skull (striped) -> concrete; metal on car bodies (hairline brush streaks even
   with UVs scaled down) -> flat glossy paint; hedge on a bush (read as pebbles); felt on a belly

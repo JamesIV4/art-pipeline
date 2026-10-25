@@ -9,10 +9,10 @@ pulsing softly. In trick-or-treat it is the `next_pass` of the candy material.
 
 ## Why
 
-The user explicitly wanted "candy glow is an outline around each piece, not a halo". An earlier
-additive camera-facing halo sprite (halo.gdshader) made pieces into blurry blobs and hid their
-shape. An outline keeps the silhouette crisp, separates the piece from any background at night,
-and carries a colour code (tier / kind) without covering the model.
+The user explicitly wanted "candy glow is an outline around each piece, not a halo". The earlier
+additive camera-facing halo sprite behind each candy (halo.gdshader, still in the repo but no longer
+wired) was replaced. An outline keeps the silhouette crisp, separates the piece from any background
+at night, and carries a colour code (tier / kind) without covering the model.
 
 ## How
 

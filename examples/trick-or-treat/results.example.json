@@ -1,0 +1,212 @@
+[
+ {
+  "id": "tree_maple_red",
+  "gltf": "game/assets/models/props/tree_maple_red.gltf",
+  "sheet": "art/review/sheets/tree_maple_red.png",
+  "engine_preview": "art/review/engine/tree_maple_red.png",
+  "tris": 3707,
+  "budget": 4000,
+  "gates": "PASS",
+  "notes": "5 m storybook maple: curved bark trunk (14 sides, 5-root flare), strong low branch under socket_branch kept clear of foliage, 3 upper limbs forking under the crown, 32 leafy clusters (lobed smooth blobs, leaves material, box UVs) in maple_red/apple_red with maple_orange on top, darker filler core."
+ },
+ {
+  "id": "tree_maple_orange",
+  "gltf": "game/assets/models/props/tree_maple_orange.gltf",
+  "sheet": "art/review/sheets/tree_maple_orange.png",
+  "engine_preview": "art/review/engine/tree_maple_orange.png",
+  "tris": 3603,
+  "budget": 4000,
+  "gates": "PASS",
+  "notes": "4.5 m, rounder crown in maple_orange/pumpkin with golden_leaf top clusters; same trunk system mirrored lean."
+ },
+ {
+  "id": "tree_maple_gold",
+  "gltf": "game/assets/models/props/tree_maple_gold.gltf",
+  "sheet": "art/review/sheets/tree_maple_gold.png",
+  "engine_preview": "art/review/engine/tree_maple_gold.png",
+  "tris": 3820,
+  "budget": 4000,
+  "gates": "PASS",
+  "notes": "5.5 m, taller oval crown in golden_leaf/amber with smaller rust_leaf accent clusters and candy_corn_yellow tops."
+ },
+ {
+  "id": "bush_round",
+  "gltf": "game/assets/models/props/bush_round.gltf",
+  "sheet": "art/review/sheets/bush_round.png",
+  "engine_preview": "art/review/engine/bush_round.png",
+  "tris": 844,
+  "budget": 900,
+  "gates": "PASS",
+  "notes": "8 lobed hedge lumps (hedge material, box UVs, no pole swirl), sat flat on the ground, hedge_dark underside."
+ },
+ {
+  "id": "mailbox",
+  "gltf": "game/assets/models/props/mailbox.gltf",
+  "sheet": "art/review/sheets/mailbox.png",
+  "engine_preview": "art/review/engine/mailbox.png",
+  "tris": 656,
+  "budget": 800,
+  "gates": "PASS",
+  "notes": "D-profile lofted metal box with raised door rim, hinge, handle, raised red flag + pivot, number plate, bevelled wood post, cap board and brace; slight lean."
+ },
+ {
+  "id": "lamp_post",
+  "gltf": "game/assets/models/props/lamp_post.gltf",
+  "sheet": "art/review/sheets/lamp_post.png",
+  "engine_preview": "art/review/engine/lamp_post.png",
+  "tris": 1180,
+  "budget": 1200,
+  "gates": "PASS",
+  "notes": "Moulded metal base, collar, capital + finial, shepherd's crook with curl scroll and brace, 6-pane lantern head (glow_lamp) with flared hood, rings and drip finial. socket_light at glass centre."
+ },
+ {
+  "id": "paper_lantern",
+  "gltf": "game/assets/models/props/paper_lantern.gltf",
+  "sheet": "art/review/sheets/paper_lantern.png",
+  "engine_preview": "art/review/engine/paper_lantern.png",
+  "tris": 570,
+  "budget": 600,
+  "gates": "PASS",
+  "notes": "Round paper body (paper material, glow_lantern) with 3 raised dark ribs, metal caps, hang loop, felt tassel. Origin = socket_hang (top), socket_light at centre."
+ },
+ {
+  "id": "porch_lantern",
+  "gltf": "game/assets/models/props/porch_lantern.gltf",
+  "sheet": "art/review/sheets/porch_lantern.png",
+  "engine_preview": "art/review/engine/porch_lantern.png",
+  "tris": 530,
+  "budget": 600,
+  "gates": "PASS",
+  "notes": "Wall plate + boss, arm with scroll, 4-pane glow_porch box with corner posts, hipped roof + knob. Origin at wall mount, sticks out -Y."
+ },
+ {
+  "id": "string_bulb",
+  "gltf": "game/assets/models/props/string_bulb.gltf",
+  "sheet": "art/review/sheets/string_bulb.png",
+  "engine_preview": "art/review/engine/string_bulb.png",
+  "tris": 80,
+  "budget": 80,
+  "gates": "PASS",
+  "notes": "8-sided bulb in glow_lantern with metal cap, origin at top. Exactly at budget."
+ },
+ {
+  "id": "rocking_chair",
+  "gltf": "game/assets/models/props/rocking_chair.gltf",
+  "sheet": "art/review/sheets/rocking_chair.png",
+  "engine_preview": "art/review/engine/rocking_chair.png",
+  "tris": 1392,
+  "budget": 1400,
+  "gates": "PASS",
+  "notes": "Elliptical-section rockers, chamfered turned legs, bevelled seat and arms, curved top rail, 4 spindles, knobs; folded quilt stack (fabric material, quilt_blue/quilt_yellow, pink patch) with a draped flap."
+ },
+ {
+  "id": "bench",
+  "gltf": "game/assets/models/props/bench.gltf",
+  "sheet": "art/review/sheets/bench.png",
+  "engine_preview": "art/review/engine/bench.png",
+  "tris": 1188,
+  "budget": 1200,
+  "gates": "PASS",
+  "notes": "7 chamfered wood slats (wood_light/plank), cast-iron side frames as smooth swept tubes with arm curls, rails and ball feet."
+ },
+ {
+  "id": "swing_set",
+  "gltf": "game/assets/models/props/swing_set.gltf",
+  "sheet": "art/review/sheets/swing_set.png",
+  "engine_preview": "art/review/engine/swing_set.png",
+  "tris": 2384,
+  "budget": 2400,
+  "gates": "PASS",
+  "notes": "metal_blue A-frame (10-sided legs, foot domes, braces, top brackets), red end caps, two swings with linked silver chains and curved metal_red sling seats; right swing mid-swing."
+ },
+ {
+  "id": "flower_pot",
+  "gltf": "game/assets/models/props/flower_pot.gltf",
+  "sheet": "art/review/sheets/flower_pot.png",
+  "engine_preview": "art/review/engine/flower_pot.png",
+  "tris": 838,
+  "budget": 900,
+  "gates": "PASS",
+  "notes": "Terracotta pot with rolled rim (stucco material), soil top, three bumpy mum domes (hedge material) in maple_orange/golden_leaf, six leaves."
+ },
+ {
+  "id": "inflatable_ghost",
+  "gltf": "game/assets/models/props/inflatable_ghost.gltf",
+  "sheet": "art/review/sheets/inflatable_ghost.png",
+  "engine_preview": "art/review/engine/inflatable_ghost.png",
+  "tris": 1550,
+  "budget": 1600,
+  "gates": "PASS",
+  "notes": "Gored vinyl body (6 puffy panels + 2 pinched seams), scalloped hem, raised arms with mitten hands, ink eyes with glints, open mouth with tongue, cheeks, tether ropes and stakes; sagging head."
+ },
+ {
+  "id": "inflatable_cat",
+  "gltf": "game/assets/models/props/inflatable_cat.gltf",
+  "sheet": "art/review/sheets/inflatable_cat.png",
+  "engine_preview": "art/review/engine/inflatable_cat.png",
+  "tris": 1597,
+  "budget": 1600,
+  "gates": "PASS",
+  "notes": "Gored vinyl body with seam, smooth head, pink inner ears, cat_orange eyes, whiskers, paws, tail, charcoal belly; felt witch hat with pumpkin band, gold buckle and bent tip."
+ },
+ {
+  "id": "cauldron",
+  "gltf": "game/assets/models/props/cauldron.gltf",
+  "sheet": "art/review/sheets/cauldron.png",
+  "engine_preview": "art/review/engine/cauldron.png",
+  "tris": 1340,
+  "budget": 1400,
+  "gates": "PASS",
+  "notes": "Lathed metal pot with rolled stone_dark rim, three stubby legs, ring handles, glowing teal potion with bubbles and a drip, wooden stirring spoon."
+ },
+ {
+  "id": "parked_car",
+  "gltf": "game/assets/models/props/parked_car.gltf",
+  "sheet": "art/review/sheets/parked_car.png",
+  "engine_preview": "art/review/engine/parked_car.png",
+  "tris": 3972,
+  "budget": 4000,
+  "gates": "PASS",
+  "notes": "Single smooth loft body (superellipse sections split at the beltline, tumblehome cabin, rounded nose/tail), grid-aligned glass panels (water_deep), fender arches, chunky 14-sided tyres with hubs, capsule bumpers, round headlights with bezels (surface-snapped), taillights, grille, plates, mirrors, handles, exhaust. Roof stays body colour (platform)."
+ },
+ {
+  "id": "cloud_a",
+  "gltf": "game/assets/models/sky/cloud_a.gltf",
+  "sheet": "art/review/sheets/cloud_a.png",
+  "engine_preview": "art/review/engine/cloud_a.png",
+  "tris": 1287,
+  "budget": 1500,
+  "gates": "PASS",
+  "notes": "14 m: 11 smooth lobed puffs (cloud material, roof_slate), shared flat base made by squashing (no cut caps), buried faces culled above the base only."
+ },
+ {
+  "id": "cloud_b",
+  "gltf": "game/assets/models/sky/cloud_b.gltf",
+  "sheet": "art/review/sheets/cloud_b.png",
+  "engine_preview": "art/review/engine/cloud_b.png",
+  "tris": 1237,
+  "budget": 1500,
+  "gates": "PASS",
+  "notes": "10 m rounder variant, 8 puffs."
+ },
+ {
+  "id": "cloud_c",
+  "gltf": "game/assets/models/sky/cloud_c.gltf",
+  "sheet": "art/review/sheets/cloud_c.png",
+  "engine_preview": "art/review/engine/cloud_c.png",
+  "tris": 1367,
+  "budget": 1500,
+  "gates": "PASS",
+  "notes": "18 m long lumpy variant, 13 puffs."
+ },
+ {
+  "id": "bat",
+  "gltf": "game/assets/models/sky/bat.gltf",
+  "sheet": "art/review/sheets/bat.png",
+  "engine_preview": "art/review/engine/bat.png",
+  "tris": 392,
+  "budget": 400,
+  "gates": "PASS",
+  "notes": "Round felt body with belly tint, ears with pink inners, big eyes + glints, fangs; scalloped wings wing_l/wing_r as child nodes with origin at the shoulder."
+ }
+]

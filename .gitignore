@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Generated art outputs never belong in the pipeline repo
+*.glb
+*.gltf
+*.bin
+*.blend
+*.blend1
+*.fbx
+*.obj
+*.wav
+*.ogg
+*.mp3
+*.exr
+*.webp
+*.ktx2
+*.mp4
+*.webm
+_frames/
+
+# Images: allowed only when a doc needs them (keep under ~300 KB); generated sheets stay out
+*.png
+!docs/**/*.png
+!techniques/**/*.png
+
+# Godot
+.godot/
+*.import
+*.uid
+.godot_lock
+.godot_main_project.lock
+
+# Third-party build outputs
+node_modules/
+tools/review/asset-review/vendor/three.bundle.js
+
+# Secrets and local config
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+
+# OS / editors
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+.idea/

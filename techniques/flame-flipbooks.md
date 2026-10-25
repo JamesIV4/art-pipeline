@@ -17,17 +17,16 @@ game. Designing the effects as code keeps them in the toy-like style, reproducib
 
 ## How
 
-tools/vfx/make_vfx.py (Blender) then tools/vfx/assemble_vfx.py (Pillow):
+tools/vfx/make_vfx.py (Blender) and tools/vfx/make_fire.py (numpy), then tools/vfx/assemble_vfx.py (Pillow):
 
 - Scene: 256 px, film transparent, view transform Standard, EEVEE 32 TAA samples, ortho scale
   2.2-2.4, camera on +Z looking down.
 - Material: Emission + Transparent mixed by an alpha socket; colour and alpha come from small
   builders (radial spherical-gradient ramps, object-space Y ramps, UV ramps).
-- Flame (16 frames, phase `f / 16 * tau`): a 40-point teardrop outline, width
-  `sin(a) * (0.55 * (1 - y01) ** 0.8 + 0.08)`, a licking tip as a travelling wave
-  `sin(2 ph + 3.5 y) * 0.22 * tip^2` plus sway, a 12% stretch pulse. Two layers: outer
-  (orange -> red tips) and inner at 0.6 scale (pale yellow core). Alpha fades over the top 60% of
-  object Y. Loops cleanly because phase wraps.
+- Flame: since 2026-10-25 `flame_4x4` comes from tools/vfx/make_fire.py (numpy + Pillow, no
+  Blender), a procedural heat-field flame; see procedural-fire-flipbook.md. make_vfx.py no longer
+  renders it. The retired Blender version was a 40-point teardrop outline with a travelling-wave
+  tip and an inner yellow core layer; it read as a cartoon raindrop, not fire.
 - Smoke (16 frames): 7 seeded faceted ico blobs that grow, drift up and dissolve, lit from above by
   mapping normal.y into a lilac-to-white ramp; fade after 35% of life.
 - Swirl (16 frames): a 90-segment spiral ribbon that unwinds (radius grows with t), alpha ramps

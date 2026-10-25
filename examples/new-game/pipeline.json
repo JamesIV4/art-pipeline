@@ -1,0 +1,24 @@
+{
+  "paths": {
+    "godot_project": "godot",
+    "palette_out": "godot/assets/palette",
+    "materials_out": "godot/assets/materials",
+    "models_out": "godot/assets/models",
+    "published_catalog": "godot/assets/catalog.json",
+    "toon_material": "godot/materials/toon.tres",
+    "vfx_out": "godot/assets/vfx",
+    "sfx_out": "godot/assets/sfx",
+    "music_out": "godot/assets/music",
+    "native_header_dir": null
+  },
+  "settings": {
+    "cpp_namespace": "game",
+    "toon_shader_res": "res://addons/art_pipeline/shaders/surface/toon.gdshader",
+    "floating_prefixes": ["sky/", "pickups/"],
+    "floating_ids": [],
+    "publish_fields": ["id", "path", "collision", "walkable", "radius", "height", "collision_top"],
+    "scale_figure_height_m": 1.2,
+    "scale_figure_color": "trim_white",
+    "build_stamp_key": "art_build"
+  }
+}

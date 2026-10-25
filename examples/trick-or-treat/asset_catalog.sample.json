@@ -1,0 +1,130 @@
+{
+ "comment": "Sample of S:/Repos/trick-or-treat/art/asset_catalog.json (2026-10-25, 11 of 184 entries chosen to show every field). See docs/catalog-schema.md.",
+ "assets": [
+  {
+   "id": "pumpkin_round",
+   "path": "props/pumpkin_round",
+   "lane": "pumpkins_farm",
+   "tris": 1400,
+   "collision": "cylinder",
+   "walkable": true,
+   "brief": "Plump squat pumpkin 0.6 m wide, 0.45 m tall, 8 soft lobes, curly stem. Readable ridges."
+  },
+  {
+   "id": "bush_round",
+   "path": "props/bush_round",
+   "lane": "yard_street",
+   "tris": 2000,
+   "collision": "cylinder",
+   "brief": "Round leafy shrub about 1.1 m wide, 0.85 m tall: dark core lumps covered by ~380 small pointed leaf cards (14 cm) in hedge_dark / hedge / vine with moss tips on top, a sprinkle of tiny cream flowers."
+  },
+  {
+   "id": "flower_pot",
+   "path": "props/flower_pot",
+   "lane": "yard_street",
+   "tris": 900,
+   "collision": "cylinder",
+   "walkable": true,
+   "brief": "Terracotta pot 0.5 m with orange mums (maple_orange / golden_leaf blobs)."
+  },
+  {
+   "id": "dragon_kid",
+   "path": "characters/dragon_kid",
+   "lane": "characters_candy",
+   "tris": 10000,
+   "collision": "none",
+   "parts": [
+    "body",
+    "head",
+    "wing_l",
+    "wing_r",
+    "tail",
+    "leg_l",
+    "leg_r",
+    "arm_l",
+    "arm_r",
+    "bucket",
+    "bucket_candy"
+   ],
+   "sockets": [
+    "bucket_light"
+   ],
+   "brief": "1.1 m child in a plush teal dragon onesie: hood with two tiny cream horns, round face showing (skin, big ink eyes with white highlights, pink cheeks), cream belly, stubby felt wings on the back, a fat bouncy tail, mitten hands, round boots. Holds an orange jack-o'-lantern bucket (glowing face cut, rope handle) in the right hand. Every part is its own object parented to an empty root 'dragon_kid' at the feet; each part's origin sits at its joint (hips for legs, shoulders for arms, neck for head, wing roots, tail base) so the game can animate it procedurally. bucket is a child of arm_r; bucket_candy is a child of bucket (a heap of candy inside it that the game scales from 0 to 1 as it fills)."
+  },
+  {
+   "id": "bat",
+   "path": "sky/bat",
+   "lane": "yard_street",
+   "tris": 400,
+   "collision": "none",
+   "parts": [
+    "wing_l",
+    "wing_r"
+   ],
+   "brief": "Cute round bat 0.5 m wingspan, charcoal, with wing_l / wing_r child objects (origin at the shoulder) so the game can flap them."
+  },
+  {
+   "id": "pumpkin_tall",
+   "path": "props/pumpkin_tall",
+   "lane": "pumpkins_farm",
+   "tris": 1400,
+   "collision": "cylinder",
+   "walkable": true,
+   "brief": "Taller pumpkin 0.5 m wide, 0.6 m tall, pumpkin_light tone with pumpkin_dark grooves."
+  },
+  {
+   "id": "trampoline_large",
+   "path": "props/trampoline_large",
+   "lane": "play_props",
+   "tris": 6000,
+   "collision": "box",
+   "walkable": true,
+   "collision_top": 0.85,
+   "bounce": 17.0,
+   "brief": "Round backyard trampoline ~3.75 m across (pad outer radius 1.87 m), origin at ground centre. Dark plum woven mat, top exactly 0.85 m, printed with a big jack-o'-lantern inside an orange target ring and faint bats; bone-stitched purple border; ring of 40 steel springs; puffy orange safety pad (alternating pumpkin panels, purple skirt) rising ~6 cm above the mat; 6 curved steel W-legs; small purple-step ladder on the front-right (-62 deg, reaches r 2.2 m). No enclosure net. bounce = launch speed for gameplay."
+  },
+  {
+   "id": "sunflower",
+   "path": "props/sunflower",
+   "lane": "pumpkins_farm",
+   "tris": 1400,
+   "collision": "trunk",
+   "radius": 0.06,
+   "height": 2.0,
+   "brief": "Oversized sunflower 2.4 m tall, head 0.9 m across facing -Y and tilted slightly down, big leaves on the stalk."
+  },
+  {
+   "id": "candy_twist_berry_dots",
+   "path": "candy/candy_twist_berry_dots",
+   "lane": "candy_variety",
+   "tris": 500,
+   "collision": "none",
+   "floating": true,
+   "candy_tier": 0,
+   "glow": "#ff2f74",
+   "brief": "Round twist-wrapped sweet in raspberry with white polka dots and pale pink fans. About 0.32 m across; origin at its centre (it floats and spins)."
+  },
+  {
+   "id": "brick_planter",
+   "path": "props/brick_planter",
+   "lane": "decor_ground",
+   "tris": 3600,
+   "collision": "box",
+   "walkable": true,
+   "collision_top": 0.55,
+   "brief": "Raised brick planter 2.0 x 0.9 x 0.55 m (X long): brick walls, stone cap course, soil, planted with mums and two small pumpkins. Cap/soil top is flat at 0.55 m; plants rise above it (collision_top caps the box collision at the cap)."
+  },
+  {
+   "id": "string_jack",
+   "path": "props/string_jack",
+   "lane": "decor",
+   "tris": 150,
+   "collision": "none",
+   "floating": true,
+   "sockets": [
+    "light"
+   ],
+   "brief": "Tiny glowing jack-o'-lantern bulb 0.14 m for porch string lights: ribbed glow_jack_shell globe with a glow_jack_hot carved face toward -Y, green stem and black lamp socket. Origin at the top of the socket (the wire hang point); socket_light at the globe centre. Instanced along sagging wires."
+  }
+ ]
+}

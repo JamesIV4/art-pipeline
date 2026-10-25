@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+; Origin: art-pipeline original (2026-10-25): the scene wrapper for asset_preview.gd (a port of trick-or-treat's C++
+; preview mode, see that script's header). Run it as the scene argument: godot --path <project> <this res:// path> -- --preview=...
+
+[ext_resource type="Script" path="res://addons/art_pipeline/review/asset_preview.gd" id="1_preview"]
+
+[node name="AssetPreview" type="Node3D"]
+script = ExtResource("1_preview")

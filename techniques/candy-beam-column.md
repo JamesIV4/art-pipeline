@@ -11,8 +11,9 @@ never draws a hard line where it meets ground or roofs.
 
 Platforming research ("readable landings", Iwata Asks: Super Mario 3D Land) says the player needs
 to see where a floating object sits in depth. A drop shadow under the hero plus a glow pool under
-each floating candy make the jump spot visible. A sphere halo around the candy was rejected (it
-hid the shape); the column marks position without touching the silhouette.
+each floating candy make the jump spot visible. The glow around the candy itself is the outline
+(outline-glow.md, the user rejected a halo); the column marks position below the piece without
+touching its silhouette.
 
 ## How
 
