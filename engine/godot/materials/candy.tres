@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3]
+; Origin: S:\Repos\trick-or-treat\game\materials\candy.tres (imported 2026-10-25)
+; Changes: shader paths point at res://addons/art_pipeline/shaders/...; values unchanged.
+; Game-supplied textures (res://assets/...) keep the trick-or-treat paths: the adopting game provides them (see README).
+
+[ext_resource type="Shader" path="res://addons/art_pipeline/shaders/pickup/candy.gdshader" id="1_shader"]
+[ext_resource type="Texture2D" path="res://assets/palette/palette.png" id="2_pal"]
+[ext_resource type="Texture2D" path="res://assets/palette/palette_emit.png" id="3_emit"]
+[ext_resource type="Shader" path="res://addons/art_pipeline/shaders/pickup/candy_outline.gdshader" id="4_outline"]
+
+[sub_resource type="ShaderMaterial" id="Outline"]
+render_priority = 0
+shader = ExtResource("4_outline")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("Outline")
+shader = ExtResource("1_shader")
+shader_parameter/palette = ExtResource("2_pal")
+shader_parameter/palette_emit = ExtResource("3_emit")
+shader_parameter/self_glow = 0.5

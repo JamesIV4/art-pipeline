@@ -1,0 +1,59 @@
+[gd_resource type="Environment" load_steps=3 format=3]
+; Origin: S:\Repos\OpenXcom-Extended-3D\xcom-3d-godot\battlescape-dev\oxp\battlescape_view.gd (_build_scene: scene base,
+; neutral reflection sky) + S:\Repos\OpenXcom-Extended-3D\xcom-3d-godot\battlescape-dev\oxp\debug\shipped_render_defaults.gd
+; (the "Latest 2" shipped preset applied on top by render_panel.gd) (imported 2026-10-25)
+; Changes: the code-built Environment and the preset dictionary written out as one resource (amb_color #4f6995 written
+; as Color(0x4f/255, 0x69/255, 0x95/255), exactly what Color("#4f6995") gives the panel). Not in this file because they are not Environment properties: MSAA 4x, shadow atlas 8192 +
+; filter Ultra, SSAO quality Ultra at full resolution (project settings / post_fx.gd), sun values (rig_xcom_day.tscn),
+; sharpen / vignette / grain (post_fx.gd), depth AO (contact_fx.gd). SDFGI, SSR, fog, volumetric fog: off as shipped.
+
+[sub_resource type="ProceduralSkyMaterial" id="NeutralSky"]
+sky_top_color = Color(0.5, 0.5, 0.5, 1)
+sky_horizon_color = Color(0.42, 0.42, 0.42, 1)
+ground_bottom_color = Color(0.25, 0.25, 0.25, 1)
+ground_horizon_color = Color(0.42, 0.42, 0.42, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="ReflectionSky"]
+sky_material = SubResource("NeutralSky")
+radiance_size = 2
+
+[resource]
+background_mode = 1
+background_color = Color(0, 0, 0, 1)
+sky = SubResource("ReflectionSky")
+ambient_light_source = 2
+ambient_light_color = Color(0.309804, 0.411765, 0.584314, 1)
+ambient_light_sky_contribution = 0.26
+ambient_light_energy = 2.22
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+ssao_enabled = true
+ssao_radius = 1.61
+ssao_intensity = 16.0
+ssao_power = 1.5
+ssao_detail = 0.42
+ssao_horizon = 0.27
+ssao_sharpness = 0.68
+ssao_light_affect = 0.35
+ssao_ao_channel_affect = 0.06
+ssil_enabled = true
+ssil_radius = 10.87
+ssil_intensity = 1.6
+ssil_sharpness = 0.98
+ssil_normal_rejection = 1.0
+glow_enabled = true
+glow_levels/1 = 0.0
+glow_levels/2 = 0.8
+glow_levels/3 = 0.4
+glow_levels/4 = 0.1
+glow_levels/5 = 0.0
+glow_levels/6 = 0.0
+glow_levels/7 = 0.0
+glow_intensity = 3.41
+glow_strength = 1.12
+glow_bloom = 0.02
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0

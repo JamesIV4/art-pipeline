@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3]
+; Origin: S:\Repos\OpenXcom-Extended-3D\xcom-3d-godot\battlescape-dev\oxp\battlescape_view.gd (_build_scene) +
+; S:\Repos\OpenXcom-Extended-3D\xcom-3d-godot\battlescape-dev\oxp\debug\shipped_render_defaults.gd ("Latest 2") (imported 2026-10-25)
+; Changes: the code-built WorldEnvironment + sun with the shipped preset applied, as an instanceable rig. Sun rotation =
+; render_panel.gd's (-sun_elev, sun_azim, 0) = (-45.5, 149.5, 0) deg (YXZ). PostFX carries the shipped post values
+; (sharpen 0.27, vignette 0.5 / 1.0 / 0.45, grain 0.015 at 1.6 px, depth AO 0.46 m x 0.77 full res). XCOM's camera
+; is orthographic, pitch 30, yaw 45, 250-359 m back (not included: the game owns its camera).
+
+[ext_resource type="Environment" path="res://addons/art_pipeline/presets/env_xcom_latest2.tres" id="1_env"]
+[ext_resource type="Script" path="res://addons/art_pipeline/post_fx/post_fx.gd" id="2_post"]
+
+[node name="XcomDayRig" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.861629, -0.362002, 0.355738, 0, 0.700909, 0.71325, -0.507538, 0.614557, -0.603924, 0, 0, 0)
+light_color = Color(0.537255, 0.498039, 0.415686, 1)
+light_energy = 3.44
+light_indirect_energy = 1.06
+light_specular = 1.0
+shadow_enabled = true
+shadow_opacity = 1.0
+shadow_bias = 0.195
+shadow_normal_bias = 1.8
+shadow_blur = 0.17
+directional_shadow_mode = 2
+directional_shadow_max_distance = 515.0
+
+[node name="PostFX" type="Node" parent="."]
+script = ExtResource("2_post")
+sun_path = NodePath("../Sun")
+film_grain = 0.015
+grain_size = 1.6

@@ -1,0 +1,71 @@
+<!doctype html>
+<!-- Origin: S:/Repos/OpenXcom-Extended-3D/art/tools/asset-review/index.html (imported 2026-10-25) -->
+<!-- Changed: header only -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asset Revision Review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">Asset revisions</div>
+  <input id="search" type="search" placeholder="Filter by id, part or note…" autocomplete="off">
+  <select id="show" title="Which assets to show">
+    <option value="all">All</option>
+    <option value="flagged">Flagged</option>
+    <option value="open">Open notes</option>
+    <option value="done">Done</option>
+    <option value="unflagged">Not flagged</option>
+  </select>
+  <div class="lighting">
+    <label title="OpenXcom's global shade: 15 is the darkest night, 0 full day">Shade
+      <input id="shade" type="range" min="0" max="15" step="1" value="15">
+      <output id="shadeOut">15 · night</output></label>
+    <label title="MCD light sources (street lamps, base and UFO lights) as in the game"><input id="lamps" type="checkbox" checked> Lamps</label>
+    <label title="The soldier light pool: how terrain and units look next to your squad. X-COM's own units are always in it."><input id="squad" type="checkbox"> Squad light</label>
+  </div>
+  <div id="saveState" class="save-state">Loading…</div>
+  <button id="exportBtn" class="primary">Export…</button>
+</header>
+<div class="layout">
+  <nav id="tree" class="tree"></nav>
+  <main id="grid" class="grid-wrap">
+    <div class="grid-head"><h1 id="folderTitle"></h1><div id="folderInfo" class="muted"></div></div>
+    <div id="cards" class="cards"></div>
+  </main>
+</div>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-box">
+    <div class="modal-view-wrap"><div id="modalView" class="view big"></div>
+      <div class="modal-hint">Drag to rotate · wheel to zoom · double-click to reset · ← → next asset · Esc closes</div></div>
+    <aside class="modal-side">
+      <div class="modal-nav"><button id="prevBtn" title="Previous (←)">‹</button><span id="modalPos" class="muted"></span><button id="nextBtn" title="Next (→)">›</button><button id="closeBtn" class="close" title="Close (Esc)">✕</button></div>
+      <h2 id="modalTitle"></h2>
+      <div id="modalMeta" class="muted small"></div>
+      <div id="modalSprites" class="sprites"></div>
+      <div id="modalEditor"></div>
+    </aside>
+  </div>
+</div>
+
+<div id="exportDlg" class="modal" hidden>
+  <div class="dialog">
+    <h2>Export for contributors</h2>
+    <p class="muted small">Makes a zip with contact-sheet PNGs (four views, the original sprite and the note per asset), one preview per asset, the reference sprites, the models with all their textures, and the notes as JSON + README.</p>
+    <div class="row"><label>Package name <input id="pkgName" type="text" value="asset_revisions"></label>
+      <label>Preview light <select id="pkgLight"><option value="current">As viewed now</option><option value="15">Night (shade 15)</option><option value="0">Day (shade 0)</option></select></label></div>
+    <div class="row"><label><input id="pkgDone" type="checkbox"> Include done / won't fix</label>
+      <button id="pkgAll">Select all</button><button id="pkgNone">Select none</button><span id="pkgCount" class="muted"></span></div>
+    <div id="pkgList" class="pkg-list"></div>
+    <div id="pkgProgress" class="muted small"></div>
+    <div class="row end"><button id="pkgCancel">Close</button><button id="pkgGo" class="primary">Export zip</button></div>
+  </div>
+</div>
+
+<canvas id="gl"></canvas>
+<script type="module" src="app.js"></script>
+</body>
+</html>

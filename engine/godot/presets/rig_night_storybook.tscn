@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3]
+; Origin: S:\Repos\trick-or-treat\game\scenes\main.tscn (nodes WorldEnvironment, Moon, PostFX) (imported 2026-10-25)
+; Changes: the lighting / post part of the game scene as an instanceable rig. The Moon transform is the game's runtime
+; key-light direction (native\src\play\festival_game.cpp: 52 deg elevation, turned 0.7 rad from the sky moon so the
+; light comes from high and slightly behind the camera), baked for the sky's default moon_dir (0.3, 0.4, -0.86).
+; The LightningFlash light and the game nodes (generator, player, camera, HUD, audio) are left out.
+
+[ext_resource type="Environment" path="res://addons/art_pipeline/presets/env_night_storybook.tres" id="1_env"]
+[ext_resource type="CameraAttributesPractical" path="res://addons/art_pipeline/presets/camera_toy_lens.tres" id="2_lens"]
+[ext_resource type="Script" path="res://addons/art_pipeline/post_fx/post_fx.gd" id="3_post"]
+
+[node name="NightStorybookRig" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_env")
+camera_attributes = ExtResource("2_lens")
+
+[node name="Moon" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.934352, -0.28081, 0.219393, 0, 0.615661, 0.788011, -0.356353, -0.736279, 0.575244, 0, 0, 0)
+light_color = Color(0.6, 0.7, 1, 1)
+light_energy = 0.62
+light_volumetric_fog_energy = 0.6
+shadow_enabled = true
+shadow_opacity = 0.78
+shadow_bias = 0.05
+shadow_blur = 1.5
+directional_shadow_mode = 2
+directional_shadow_max_distance = 70.0
+
+[node name="PostFX" type="Node" parent="."]
+script = ExtResource("3_post")

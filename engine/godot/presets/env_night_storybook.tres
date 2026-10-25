@@ -1,0 +1,71 @@
+[gd_resource type="Environment" load_steps=4 format=3]
+; Origin: S:\Repos\trick-or-treat\game\scenes\main.tscn (sub-resources NightEnv, NightSky, SkyMat) (imported 2026-10-25)
+; Changes: extracted from the game scene into a standalone Environment; the sky shader path points at the addon
+; (was res://shaders/sky.gdshader). Values unchanged. The game sets the sky's moon_dir / cloud_cover per seed at
+; runtime (C++ FestivalGame); the defaults here are the shader's own (moon_dir 0.3, 0.4, -0.86; cloud_cover 0.5).
+; SSAO / SSIL / glow / tonemap values are the XCOM "Latest 2" shipped preset (see presets/project_settings_rendering.md).
+
+[ext_resource type="Shader" path="res://addons/art_pipeline/shaders/sky/night_sky.gdshader" id="1_sky"]
+
+[sub_resource type="ShaderMaterial" id="SkyMat"]
+shader = ExtResource("1_sky")
+
+[sub_resource type="Sky" id="NightSky"]
+sky_material = SubResource("SkyMat")
+radiance_size = 2
+
+[resource]
+background_mode = 2
+sky = SubResource("NightSky")
+ambient_light_source = 2
+ambient_light_color = Color(0.42, 0.48, 0.85, 1)
+ambient_light_energy = 0.55
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+ssr_enabled = true
+ssr_max_steps = 48
+ssr_fade_in = 0.4
+ssr_fade_out = 3.0
+ssr_depth_tolerance = 0.3
+ssao_enabled = true
+ssao_radius = 1.61
+ssao_intensity = 16.0
+ssao_power = 1.5
+ssao_detail = 0.42
+ssao_horizon = 0.27
+ssao_sharpness = 0.68
+ssao_light_affect = 0.35
+ssao_ao_channel_affect = 0.06
+ssil_enabled = true
+ssil_radius = 10.87
+ssil_intensity = 1.6
+ssil_sharpness = 0.98
+ssil_normal_rejection = 1.0
+glow_enabled = true
+glow_levels/1 = 0.0
+glow_levels/2 = 0.8
+glow_levels/3 = 0.4
+glow_levels/4 = 0.1
+glow_levels/5 = 0.0
+glow_levels/6 = 0.0
+glow_levels/7 = 0.0
+glow_intensity = 3.41
+glow_strength = 1.12
+glow_bloom = 0.02
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0
+fog_enabled = true
+fog_light_color = Color(0.15, 0.19, 0.38, 1)
+fog_light_energy = 0.9
+fog_density = 0.004
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.011
+volumetric_fog_albedo = Color(0.62, 0.68, 0.95, 1)
+volumetric_fog_emission = Color(0.02, 0.025, 0.06, 1)
+volumetric_fog_anisotropy = 0.35
+volumetric_fog_length = 80.0
+volumetric_fog_ambient_inject = 0.35
+volumetric_fog_sky_affect = 0.0

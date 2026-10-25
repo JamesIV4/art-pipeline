@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+; Origin: S:\Repos\trick-or-treat\game\materials\halo.tres (imported 2026-10-25)
+; Changes: shader paths point at res://addons/art_pipeline/shaders/...; values unchanged.
+
+[ext_resource type="Shader" path="res://addons/art_pipeline/shaders/pickup/halo.gdshader" id="1_shader"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_shader")

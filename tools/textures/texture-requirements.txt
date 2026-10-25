@@ -1,0 +1,3 @@
+# Origin: S:/Repos/OpenXcom-Extended-3D/art/tools/texture-requirements.txt (imported 2026-10-25)
+# Changed: header only
+Pillow>=12.2,<13
