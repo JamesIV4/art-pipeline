@@ -1,6 +1,6 @@
 # art-pipeline
 
-The central art pipeline for every game: 3D assets written as code and built in headless Blender,
+The central art pipeline for my games: 3D assets written as code and built in headless Blender,
 checked by cheap automated gates, exported as glTF, published through a catalog, and reviewed in the
 engine (Godot 4.7). It was extracted on 2026-10-25 from two game repos:
 
