@@ -8,7 +8,8 @@ and outputs; this repo holds tools, kits, engine assets and knowledge.
 ## Before an art task
 
 1. Read `README.md` (flow and layout), `docs/quality-contract.md`, and the game's `art/team/BRIEF.md`
-   and catalog entries for the assets involved.
+   and catalog entries for the assets involved. Commands for common tasks are in `docs/recipes.md`;
+   terms in `docs/glossary.md`.
 2. Look up relevant notes in `techniques/README.md` and recent `research/`; reuse a known technique
    before inventing one. Read the gotchas.
 3. Check which game you are acting on: run tools from the game root or set `ART_GAME_ROOT`;
@@ -29,7 +30,15 @@ and outputs; this repo holds tools, kits, engine assets and knowledge.
   distance, then iterate (`docs/review-gates.md`).
 - Fidelity, not conformity: a concept image raises polish; never delete or restyle established
   features, palettes or lighting to match it without asking the user
-  (`techniques/art-direction-fidelity.md`).
+  (`techniques/art-direction-fidelity.md`). If the reference shows the very asset being built, ask
+  once whether it is a design target.
+- When a choice is taste (which world for a trailer shot, which variant), render a labelled options
+  sheet and let the user pick, rather than iterating on your own guess
+  (`tools/marketing/shot_options.ps1`, `techniques/trailer-shot-capture.md`).
+- Marketing captures (stills, trailer, icon) show the real game: no debug shortcuts, no fabricated
+  effects. Review every shot's frames before assembling, and redo only the bad ones.
+- Long renders run as a detached process with a log; never cut a Godot process's output pipe short
+  (`Select-Object -First`), which kills it mid-write.
 
 ## After every art task: write back
 

@@ -14,6 +14,47 @@ engine (Godot 4.7). It was extracted on 2026-10-25 from two game repos:
 Knowledge (techniques, research, process) is shared by every game; tools are generic where that was
 cheap, and each file says where it came from.
 
+## For AI agents: start here
+
+You are probably here because you were asked to make or change art (a model, texture, palette,
+material, effect, sound, shader, lighting, a capture, a trailer or an icon) in one of the user's games.
+
+1. Read [CLAUDE.md](CLAUDE.md): the standing rules, including the **write-back** you owe this repo at
+   the end of every art task. (Other agents: [AGENTS.md](AGENTS.md) points to the same file.)
+2. Find the command for your task in [docs/recipes.md](docs/recipes.md); terms are in
+   [docs/glossary.md](docs/glossary.md); the doc index is [docs/README.md](docs/README.md).
+3. Before inventing a method, look it up in [techniques/README.md](techniques/README.md) (by topic)
+   and the newest [research/](research/README.md) notes for the game you are in. Read the Gotchas.
+4. Run tools from the **game root**, not from here. `python S:\Repos\art-pipeline\tools\pipeline_paths.py`
+   prints which game and which paths a tool would touch.
+5. Use the PowerShell tool (the Bash tool is broken on this machine), Blender only headless, the
+   Godot `_console` exe, and never kill or import over the user's open Godot editor
+   ([docs/toolchain.md](docs/toolchain.md)).
+
+| I need to... | Look at |
+|---|---|
+| build or change a 3D asset | `kits/lowpoly/README.md`, `examples/trick-or-treat/build_*.py`, `techniques/lowpoly-textured-style.md` |
+| decide if an asset is good enough | `docs/quality-contract.md`, `docs/review-gates.md`, `techniques/art-direction-fidelity.md` |
+| see an asset in the real renderer | `engine/godot/review/asset_preview.ps1`, `techniques/godot-review-captures.md` |
+| change colours or painted materials | `tools/make_palette.py`, `tools/set_palette_row.py`, `tools/make_materials.py`, `techniques/palette-tint-uv.md` |
+| make particles, fire or sounds | `tools/vfx/README.md`, `tools/audio/`, `techniques/flame-flipbooks.md`, `techniques/fm-synth-audio.md` |
+| set up shaders, lighting, post | `engine/godot/README.md`, `techniques/toon-shading.md`, `techniques/post-processing-stack.md` |
+| record a trailer, stills or an icon | `tools/marketing/README.md`, `techniques/trailer-shot-capture.md`, `techniques/engine-rendered-icon.md` |
+| run parallel art workers | `docs/lane-batch-workflow.md`, `docs/team-brief-template.md` |
+| start a new game on the pipeline | "Adopting it in a game" below, `docs/game-layout.md`, `docs/recipes.md` section 1 |
+| know what the user has already decided | `techniques/art-direction-fidelity.md` and the game's `research/*-retro.md` notes |
+
+### Status and known limits (2026-10-26)
+
+- trick-or-treat still runs its own in-repo copies of the tools (`art/tools/`, lane kits); changes
+  made there must be ported here (CLAUDE.md, "Pulling improvements back").
+- The Godot side of this repo (shaders, presets, the GDScript previewer) has not been run in-engine
+  from here yet; trick-or-treat's C++ preview is the proven path.
+- XCOM-lineage tools (`kits/xcom`, `tools/review`, `tools/textures`) still assume XCOM's layout and
+  catalog schema; see their READMEs.
+- Godot 4.7 has no plugin route for DLSS / FSR 3 / FSR 4 yet
+  (`research/2026-10-26-tot-polish-pass-retro.md`).
+
 ## The flow
 
 ```
@@ -47,11 +88,11 @@ Process rules: `docs/quality-contract.md`, `docs/lane-batch-workflow.md`, `docs/
 
 | Path | What |
 |---|---|
-| `tools/` | generic Python / PowerShell tools: palette, materials, gates, catalog, VFX, audio, image generation, textures, review (see `tools/README.md`) |
+| `tools/` | generic Python / PowerShell tools: palette, materials, gates, catalog, VFX, audio, image generation, textures, review, marketing (trailer clips, shot options, icon matte) (see `tools/README.md`) |
 | `kits/lowpoly/` | Blender helper libraries for textured low poly (core `lowpoly_kit.py` + lane kits) |
 | `kits/xcom/` | Blender helper libraries from XCOM (assembly, atlas, glTF writer, textures, sheets, finalize, master render, SDF meshes, poses) |
 | `engine/godot/` | shaders, post-processing, environment presets, review/capture scripts; install as `res://addons/art_pipeline/` |
-| `docs/` | process: toolchain, game layout + `pipeline.json`, asset conventions, quality contract, lane/batch workflow, review gates, catalog schema, team brief template |
+| `docs/` | process: recipes, glossary, toolchain, game layout + `pipeline.json`, asset conventions, quality contract, lane/batch workflow, review gates, catalog schema, team brief template (index: `docs/README.md`) |
 | `techniques/` | one file per learned technique (what, why, how, gotchas, source) |
 | `research/` | dated research notes and retrospectives |
 | `examples/` | real build scripts, catalog sample, palette/material specs, a brief and a checkpoint; example `pipeline.json` files |

@@ -26,6 +26,7 @@ Blender-side libraries are in `../kits/`, engine-side scripts in `../engine/godo
 | `imagegen/` | `codex_imagegen.ps1`: one image via the signed-in Codex CLI's image_gen, with a provenance sidecar; `-Root` = game root. See `techniques/ai-texture-generation.md` |
 | `textures/` | PBR derivation, WebP finalising, dedupe, Godot import policy, CC0 fetch (XCOM lineage); see its README |
 | `review/` | review sheets, validation and gate tools, web asset reviewer (mostly XCOM lineage, XCOM catalog schema) and `distance_check.py`; see its README |
+| `marketing/` | `trailer_clips.ps1` (per-shot trailer clips: record, review sheets, assemble with a music bed), `shot_options.ps1` (a shot in several world seeds for the user to pick), `matte_icon.py` (icon from black/white engine renders); see its README |
 
 Every copied file starts with `Origin:` and `Changed:` lines. When you change a tool, add a
 `CHANGELOG.md` entry and update the docs or technique that describes it (see `../CLAUDE.md`).

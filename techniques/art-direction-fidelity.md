@@ -40,6 +40,13 @@ Judging an asset against a concept:
 6. When the concept differs in design (lamp style, cloud presence, colour of a signature effect,
    crown shape), keep the existing design and ask before changing it.
 7. Record what changed and why in the CHECKPOINT; say what still differs from the concept.
+8. Exception (2026-10-26): when the reference depicts the very asset being built (a sheet of the
+   five unlockable costumes), ask once whether it is a design target or only a quality bar. For the
+   costumes the user chose "follow the image" (designs, colours, accessories), keeping only the kid's
+   face, the bucket and the wand (`character-costume-fidelity-pass.md`).
+9. When the user rejects a remodel, restore the old asset rather than iterating on the new one: the
+   "cuter, bigger" clouds and their new texture were rejected outright ("I like the old model
+   better"); the old model came back and only the count (16) and the shadow fix stayed.
 
 Standing direction from the user (trick-or-treat): polished toy-like low poly with hand-painted
 textures; guidance by a swirling magic trail, never a candy breadcrumb; candy glow is an outline,

@@ -473,11 +473,14 @@ def _preview_colors(meshes):
         me.color_attributes.active_color = prev
 
 
-def review_sheet(objects, name, scale_figure=True):
+def review_sheet(objects, name, scale_figure=True, size=512, views=None, zoom=1.0, focus=None):
     """Renders a 2x2 sheet (front 3/4, back 3/4, side, gameplay camera pitch) with a scale post
     as tall as the hero (scale_figure_height_m, 1.1 m dragon kid in trick-or-treat). Colours are
     palette tint x AO; the painted materials only show in the in-engine preview
-    (engine/godot/review/asset_preview.ps1). Saved to <review_sheets>/<name>.png."""
+    (engine/godot/review/asset_preview.ps1). Saved to <review_sheets>/<name>.png.
+    size: pixels per tile; views: four (yaw, pitch) camera angles in degrees; zoom > 1 frames tighter,
+    around focus (a world point; default the bounds' centre) - e.g. a 1024 px close-up sheet and a
+    shoes-only sheet for characters."""
     meshes = _meshes(objects)
     helpers = []
 
@@ -501,7 +504,7 @@ def review_sheet(objects, name, scale_figure=True):
     else:
         meshes_all = meshes
     _preview_colors(meshes_all)
-    center = (lo + hi) / 2
+    center = Vector(focus) if focus is not None else (lo + hi) / 2
     radius = max((hi - lo).length / 2, 0.6)
 
     scene = bpy.context.scene
@@ -511,8 +514,8 @@ def review_sheet(objects, name, scale_figure=True):
     shading.color_type = "VERTEX"
     shading.show_shadows = True
     shading.show_cavity = True
-    scene.render.resolution_x = 512
-    scene.render.resolution_y = 512
+    scene.render.resolution_x = size
+    scene.render.resolution_y = size
     scene.render.film_transparent = False
     world = bpy.data.worlds.new("w") if not scene.world else scene.world
     scene.world = world
@@ -520,11 +523,11 @@ def review_sheet(objects, name, scale_figure=True):
 
     cam_data = bpy.data.cameras.new("cam")
     cam_data.type = "ORTHO"
-    cam_data.ortho_scale = radius * 2.6
+    cam_data.ortho_scale = radius * 2.6 / zoom
     cam = _link(bpy.data.objects.new("cam", cam_data))
     helpers.append(cam)
     scene.camera = cam
-    views = [(-35, 20), (145, 20), (-90, 5), (-20, 35)]
+    views = views or [(-35, 20), (145, 20), (-90, 5), (-20, 35)]
     REVIEW.mkdir(parents=True, exist_ok=True)
     tiles = []
     for i, (yaw, pitch) in enumerate(views):

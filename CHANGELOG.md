@@ -5,6 +5,24 @@ Knowledge-only changes (techniques, research) don't need one unless they change 
 
 ## Unreleased
 
+### Added
+- `tools/marketing/` (new): `trailer_clips.ps1` (per-shot trailer clips from a game's scripted
+  cinematic mode: record, 3 x 2 frame review sheets, assemble with dips to black and one music bed),
+  `shot_options.ps1` (one shot rendered in several world seeds as a labelled options sheet),
+  `matte_icon.py` (transparent square icon from black/white engine renders), with a README.
+  Why: generalised from trick-or-treat's 2026-10-26 trailer and icon work. Affected games: none
+  until used; the game must implement the `--cine=` / `--icon` contract in the README. Migration: none.
+- Knowledge: `docs/recipes.md`, `docs/glossary.md`, `docs/README.md`; README "For AI agents: start
+  here"; a fuller `AGENTS.md`; techniques `trailer-shot-capture.md`, `engine-rendered-icon.md`,
+  `sign-labels-3d.md`; research `2026-10-26-tot-polish-pass-retro.md`; `CLAUDE.md` rules on
+  options sheets, marketing captures and long renders.
+
+### Changed
+- `kits/lowpoly/lowpoly_kit.py` `review_sheet()`: optional `size`, `views`, `zoom` and `focus`
+  (defaults unchanged). Why: trick-or-treat's costume fidelity pass (2026-10-26) needed 1024 px
+  close-up sheets and a shoes-only sheet to compare details against a concept image. Affected games:
+  trick-or-treat (same change in its art/tools/lowpoly_kit.py). Migration: none.
+
 ## 2026-10-25: initial import
 
 Extracted from trick-or-treat (`S:\Repos\trick-or-treat`) and OpenXcom-Extended-3D

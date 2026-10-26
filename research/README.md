@@ -29,6 +29,7 @@ don't edit old notes except to add a "Superseded by" line.
 | [2026-10-25-tot-candy-variety-retro.md](2026-10-25-tot-candy-variety-retro.md) | 84 pickups, tiers, three iterations |
 | [2026-10-25-tot-concept-fidelity-retro.md](2026-10-25-tot-concept-fidelity-retro.md) | concept-matching pass and what the user reverted |
 | [2026-10-25-tot-creatures-props-retro.md](2026-10-25-tot-creatures-props-retro.md) | monsters, thorn vines, trampolines, fire wand |
+| [2026-10-26-tot-polish-pass-retro.md](2026-10-26-tot-polish-pass-retro.md) | costumes, cleared houses, signs, clouds; trailer re-shoot; upscalers rejected; icon |
 
 Deliberately not imported: XCOM's `art/review/web_archive_20261010` deployment READMEs (repetitive),
 the per-batch staging/validation JSON dumps, logs, and the full 50 KB revision queue (distilled into

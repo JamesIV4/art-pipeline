@@ -34,6 +34,7 @@ OpenXcom-Extended-3D.
 | File | Origin |
 |---|---|
 | [character-kit-lowpoly.md](character-kit-lowpoly.md): part rigs for procedural animation | ToT |
+| [character-costume-fidelity-pass.md](character-costume-fidelity-pass.md): concept-matched outfits on one rig: shared sneakers, strip appliques, grid paint, close-up sheets, parallel builds | ToT |
 | [vehicle-kit-lowpoly.md](vehicle-kit-lowpoly.md): profile-lofted toy vehicles | ToT |
 | [foliage-crowns-lowpoly.md](foliage-crowns-lowpoly.md): leaf-card crowns, custom normals, analytic AO | ToT |
 | [thorn-vines-spines.md](thorn-vines-spines.md): tendrils, curls, spines at scale | ToT |
@@ -83,3 +84,10 @@ OpenXcom-Extended-3D.
 | [review-sheets.md](review-sheets.md): Workbench sheets and engine previews | ToT |
 | [godot-review-captures.md](godot-review-captures.md): preview sheets, scene captures, render controls | ToT + XCOM |
 | [independent-review-gates.md](independent-review-gates.md): mechanical gate + root visual gate | XCOM |
+
+## Marketing and UI in the world
+| File | Origin |
+|---|---|
+| [trailer-shot-capture.md](trailer-shot-capture.md): scripted shots, per-shot clips, frame-sheet review, user-picked worlds, assembly | ToT |
+| [engine-rendered-icon.md](engine-rendered-icon.md): game icon from an in-engine render with a black/white difference matte | ToT |
+| [sign-labels-3d.md](sign-labels-3d.md): Label3D text measured to its board; long names widen the board | ToT |
